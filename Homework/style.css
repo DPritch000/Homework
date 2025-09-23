@@ -13,7 +13,33 @@ nav{
     text-align: center;
     font-size: large;
     
-    background-color: rgba(36, 83, 129, 0.384);
+    
     color: rgb(216, 216, 216);
     float: left;
+
+    border: 2px solid darkorange;
+    border-radius: 20px;
+    padding: 3%;
+}
+.paragraph{
+    text-align: center;
+    font-size: small;
+    background-color: darkslategray;
+    color: rgb(lightgray);
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(34, 34, 34);
+}
+.button{
+    text-decoration: none;
+    border: 2px solid darkorange;
+    color: rgb(24, 24, 24);
+    background-color: rgba(86, 131, 175, 0.288);
+    padding: 3%;
+    box-shadow: 5px 5px 5px ;
+}
+#shorthand{
+    font-size: medium;
+    border : 2px solid darkorange;
+    border-radius: 10px;
 }
