@@ -4,6 +4,16 @@
 // For the assignment I will use input from the dummy form to make 
 //a dummy object
 
+const canvas = document.getElementById("")
+
+
+
+
+
+
+
+
+
 let dummyForm = document.getElementById("dummyForm")
 dummyForm.addEventListener('submit', dummy)
 
