@@ -5,7 +5,7 @@ const app = express()
 
 app.use(express.json())
 
-const userRoutes = require("./server/routes/user")
+
 
 
 //CORS middleware
@@ -17,9 +17,16 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(__dirname + "/public"))
+
+const userRoutes = require("./server/routes/user.js")
+app.use('/', userRoutes);
+
+const leaderboardRoutes = require("./server/routes/leaderboard.js");
+app.use("/lb", leaderboardRoutes);
+
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, '/public/login.html')))
+
 
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!!`))
-app.use('/', userRoutes);

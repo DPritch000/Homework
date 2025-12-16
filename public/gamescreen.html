@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="gamescreen.css">
     <script  src="./Scripts/gameloop.js" defer type = module></script>
     <script type="module" src = "./Scripts/main.js"></script>
+    <script type = "module" src = "./Scripts/leaderboard.js"> </script>
 </head>
 <nav></nav>
 <body>
@@ -17,13 +18,21 @@
     
 </body>
 <footer>
-    <p>Only putting the form here because the assignment said each page needs a form</p>
-    <br> <br>
-    <form id = "dummyForm">
-        <label for="dummyInput">Dummy Input:</label>
-        <input type="text" id="dummyInput">
-        <br><br>
-        <input type="submit" id="submit">
-    </form>
+    <h1>Leaderboard</h1>
+    <br> </br>
+        <table id="leaderboardTable">
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Player</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+  <tbody >
+    <!-- rows inserted by JS -->
+  </tbody>
+</table>
+  
+
 </footer>
 </html>

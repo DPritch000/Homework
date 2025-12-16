@@ -9,7 +9,7 @@ import Score from "./Score.js";
 
 // For the assignment I will use input from the dummy form to make 
 //a dummy object
-console.log("Hello World from gameloop.js");
+/*console.log("Hello World from gameloop.js");
 
 let dummyForm = document.getElementById("dummyForm")
 dummyForm.addEventListener('submit', dummy)
@@ -23,9 +23,13 @@ function dummy(e){
     }
 
     console.log(dummy)
-}
+}*/
 
-
+window.addEventListener("keydown", function(event) {
+    // Check if spacebar is pressed
+    if (event.code === "Space" || event.key === " ") {
+      event.preventDefault(); // Prevent scrolling
+    }});
 
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
@@ -226,7 +230,8 @@ function gameLoop(currentTime){
     if(!gameOver&& hydrantController.collideWith(player)){
         gameOver = true;
         setUpGameReset();
-        score.setHighScore();
+        score.setLocalHighScore();  // updates localStorage for the current user
+        score.submitHighScore();    // posts to backend for the current user
     }
     //draw game objects
     

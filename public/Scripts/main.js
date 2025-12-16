@@ -1,19 +1,28 @@
  import { getCurrentUser, removeCurrentUser } from "./login.js";
  
- export async function fetchData(route = '', data = {}, methodType) {
-  const response = await fetch(`http://localhost:3000${route}`, {
-    method: methodType, // *POST, PUT, DELETE, etc.
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data) // body data type must match "Content-Type" header
-  });
-  if (response.ok) {
-    return await response.json(); // parses JSON response into native JavaScript objects
-  } else {
-    throw await response.json();
-  }
+export async function fetchData(route = '', data = {}, methodType) {
+    // Build options object
+    const options = {
+        method: methodType,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
+
+    // Only include body for non-GET methods
+    if (methodType !== "GET" && data) {
+        options.body = JSON.stringify(data);
+    }
+
+    const response = await fetch(route, options);
+
+    if (response.ok) {
+        return await response.json(); // parses JSON
+    } else {
+        throw await response.json();
+    }
 }
+
 
 //navbar implementation
 let nav = document.querySelector("nav")
